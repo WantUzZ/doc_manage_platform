@@ -1,0 +1,135 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "version": "1.0.0",
+  "title": "xxx后台API",
+  "description": "接口文档",
+  "contact": {
+   "name": "want",
+   "email": "beursuperman@163.com"
+  }
+ },
+ "host": "localhost:5500",
+ "schemes": [
+  "http"
+ ],
+ "consumes": [
+  "application/json"
+ ],
+ "produces": [
+  "application/json"
+ ],
+ "paths": {
+  "/api/v1/queryCommunicationRecordBetweenNodes": {
+   "post": {
+    "summary": "查找两个节点之间的聊天记录。",
+    "consumes": [
+     "application/json"
+    ],
+    "parameters": [
+     {
+      "in": "body",
+      "name": "param",
+      "description": "请求体对象",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/queryCommunicationRecordBetweenNodesReq"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "成功响应，返回一个对象 。",
+      "schema": {
+       "$ref": "#/definitions/queryCommunicationRecordBetweenNodesRes"
+      }
+     }
+    }
+   }
+  }
+ },
+ "definitions": {
+  "queryCommunicationRecordBetweenNodesReq": {
+   "type": "object",
+   "required": [
+    "scroll",
+    "size",
+    "source",
+    "target",
+    "index",
+    "sort"
+   ],
+   "properties": {
+    "scroll": {
+     "type": "string",
+     "example": "5m"
+    },
+    "size": {
+     "type": "integer",
+     "example": 20
+    },
+    "source": {
+     "type": "string",
+     "example": "zhuangdi6351"
+    },
+    "target": {
+     "type": "string",
+     "example": "pbxjjq"
+    },
+    "index": {
+     "type": "string",
+     "example": "chat"
+    },
+    "sort": {
+     "type": "string",
+     "example": "desc"
+    }
+   }
+  },
+  "queryCommunicationRecordBetweenNodesRes": {
+   "type": "object",
+   "properties": {
+    "scroll": {
+     "type": "string",
+     "example": "5m"
+    },
+    "scrollId": {
+     "type": "string",
+     "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAeuUWbEs1WVJ2Z25RSzZyWUhiWTlJdXQ4Zw=="
+    },
+    "data": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "example": "vpainmUBQJI55olO6gEg"
+       },
+       "source": {
+        "type": "string",
+        "example": "zhuangdi6351"
+       },
+       "target": {
+        "type": "string",
+        "example": "pbxjjq"
+       },
+       "type": {
+        "type": "string",
+        "example": "chat"
+       },
+       "time": {
+        "type": "string",
+        "example": "1525626954"
+       },
+       "content": {
+        "type": "string",
+        "example": "我睡着了前面"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

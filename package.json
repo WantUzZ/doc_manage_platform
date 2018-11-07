@@ -1,0 +1,23 @@
+{
+  "name": "doc-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "swg": "swagger project edit",
+    "gulp": "gulp"
+  },
+  "author": "want",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.2",
+    "swagger": "0.7.5",
+    "gulp": "3.9.1",
+    "js-yaml": "3.8.3",
+    "opn": "5.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
